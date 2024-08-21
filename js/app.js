@@ -28,8 +28,8 @@ function actualizarContador() {
 const intervaloActualizacion = setInterval(actualizarContador, 1000);
 
 // NavBar scroll animation
+const navBar = document.querySelector('.nav-bar');
 window.onscroll = function(){
-    const navBar = document.querySelector('.nav-bar');
     const scroll = window.scrollY;
     if(scroll > 75){
         navBar.classList.add('nav-bar--active');
@@ -37,3 +37,19 @@ window.onscroll = function(){
         navBar.classList.remove('nav-bar--active');
     }
 }
+
+// Events
+const btnHam = document.querySelector('.nav-bar__ham');
+const hamGroups = document.querySelectorAll('.nav-bar__group');
+ 
+btnHam.addEventListener('click', () => {
+  hamGroups.forEach(item => {
+    item.classList.toggle('active');
+  });
+  navBar.classList.toggle('nav-bar--toggle');
+
+  // Actualizar icono
+  btnHam.src = navBar.classList.contains('nav-bar--toggle')
+    ? './assets/svg/close_icon.svg'
+    : './assets/svg/ham_icon.svg';
+});
