@@ -129,30 +129,93 @@ p{
 }
 /* Header styles */
 .header{
-    min-height: 100dvh;
+    height: 100dvh;
     background: radial-gradient(ellipse at top, #A5A2A0, transparent),
     radial-gradient(ellipse at bottom, #42403E, transparent),
     radial-gradient(ellipse at right, #A5A2A0, transparent);
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: repeat(20, 5%);
+    grid-template-rows: repeat(10, 10%);
     overflow: hidden;
 }
-.header-bg{
-    background-image: url('./assets/images/hero_bg.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.header :is(.header__logo, .header__text, .header__car){
+    z-index: 2;
+}
+.header__glass{
+    grid-area: 1 / 1 / 11 / 21;
+    z-index: 1;
+    min-height: inherit;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-image: linear-gradient(120deg, rgba(13,13,14,0.3), rgba(13,13,14,0.3));
+}
+.header__car{
+    grid-area: 1 / 8 / 11 / 15;
+    align-self: end;
+    justify-self: center;
+}
+.header__right{
+    grid-area: 1 / 12 / 11 / 21;
+    z-index: 1;
+    align-self: end;
+    justify-self: end;
+}
+.header__left{
+    grid-area: 1 / 1 / 11 / 21;
+    z-index: 1;
+    align-self: end;
+    justify-self: start;
 }
 .header__logo{
     align-self: flex-start;
-    grid-area: 3 / 4 / 4 / 9;
+    grid-area: 3 / 3 / 6 / 14;
 }
 .header__text{
-    font-size: var(--step-1);
+    font-size: var(--step-2);
     line-height: 1.5;
-    grid-area: 4 / 4 / 4 / 14;
-    color: var(--darken-700);
+    grid-area: 6 / 1 / 8 / 21;
+    color: var(--white);
+    text-align: center;
+    & span{
+        color: var(--beige-500);
+    }
+}
+.header__blob{
+    z-index: 0;
+    grid-area: 8 / 1 / 11 / 21;
+    animation: fade 5s infinite linear alternate-reverse;
+    animation-delay: -2s;
+    opacity: 0;
+}
+.header__blob--two{
+    animation-delay: -4s;
+}
+.header__blob--three{
+    animation-delay: -7s;
+}
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@media (min-width: 768px){ 
+    .header__logo{
+        align-self: flex-start;
+        grid-area: 3 / 4 / 4 / 9;
+    }
+    .header__blob{
+        /* grid-area: 3 / 11 / 12 / 20; */
+        grid-area: 3 / 11 / 12 / 20;
+    }
+    .header__text{
+        grid-area: 6 / 4 / 8 / 13;
+        font-size: var(--step-1);
+        text-align: start;
+    }
 }
 .nav-bar{
     position: fixed;
