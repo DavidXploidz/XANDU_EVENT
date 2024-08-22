@@ -4,7 +4,7 @@ const horasText = document.querySelector('.card--hour');
 const minutosText = document.querySelector('.card--min');
 const segundosText = document.querySelector('.card--seg');
 
-const fechaObjetivo = new Date('2024-08-21 17:00:00');
+const fechaObjetivo = new Date('2024-08-22 17:00:00');
 
 function actualizarContador() {
     const ahora = new Date();
@@ -38,7 +38,7 @@ window.onscroll = function(){
     }
 }
 
-// Events
+// Events menu mobile
 const btnHam = document.querySelector('.nav-bar__ham');
 const hamGroups = document.querySelectorAll('.nav-bar__group');
  

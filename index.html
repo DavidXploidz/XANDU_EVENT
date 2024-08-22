@@ -9,47 +9,49 @@
 <body>
     <nav class="nav-bar">
         <img class="nav-bar__logo" width="100" height="55" src="./assets/svg/logo.svg" alt="icon logo">
-        <img class="nav-bar__ham self-end" width="35" height="35" src="./assets/svg/ham_icon.svg" alt="icon ham">
+        <img class="nav-bar__ham self-end" width="55" height="55" src="./assets/svg/ham_icon.svg" alt="icon ham">
         <div class="nav-bar__group">
-            <a href="">Inicio</a>
-            <a href="">Acerca de </a>
-            <a href="">Bases</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#counter">Acerca de </a>
+            <a href="#bases">Bases</a>
         </div>
         <div class="nav-bar__group self-end">
             <a class="btn btn-dark" href="">Votar <img width="25" height="25" style="margin-left: 10px;" src="./assets/svg/arrow_icon.svg" alt="icon arrow"></a>
-            <a class="btn btn-dark" href="">Contacto <img width="25" height="25" style="margin-left: 10px;" src="./assets/svg/arrow_icon.svg" alt="icon arrow"></a>
+            <a class="btn btn-dark" href="#footer">Contacto <img width="25" height="25" style="margin-left: 10px;" src="./assets/svg/arrow_icon.svg" alt="icon arrow"></a>
         </div>
     </nav>
-    <header class="header header-bg-">
+    <header class="header header-bg-" id="inicio">
         <img class="header__logo" src="./assets/svg/logo.svg" alt="logo evento">
         <p class="header__text">El tiempo corre. Prepárate para elegir al vehículo que dominará en Xandu. Cada segundo cuenta hacia la gran votación. ¡No te quedes fuera!</p>
     </header>
-    <main class="counter">
-        <h1 class="counter__title">Cuenta regresiva para Xandu</h1>
-        <div class="counter__timer">
-            <div class="timer__cards">
-              <div class="card-t card-t--day" id="dias">...</div>
-              <div class="card-t card-t--hour" id="horas">...</div>
-              <div class="card-t card-t--min" id="minutos">...</div>
-              <div class="card-t card-t--seg" id="segundos">...</div>
-              <p class="card-t__p"><span>Días</span><span>D</span></p>
-              <p class="card-t__p"><span>Horas</span><span>H</span></p>
-              <p class="card-t__p"><span>Minutos</span><span>M</span></p>
-              <p class="card-t__p"><span>Segundos</span><span>S</span></p>
+    <main class="counter" id="counter">
+        <div class="contenedor">
+            <h1 class="counter__title">Cuenta regresiva para Xandu</h1>
+            <div class="counter__timer">
+                <div class="timer__cards">
+                <div class="card-t card-t--day" id="dias">...</div>
+                <div class="card-t card-t--hour" id="horas">...</div>
+                <div class="card-t card-t--min" id="minutos">...</div>
+                <div class="card-t card-t--seg" id="segundos">...</div>
+                <p class="card-t__p"><span>Días</span><span>D</span></p>
+                <p class="card-t__p"><span>Horas</span><span>H</span></p>
+                <p class="card-t__p"><span>Minutos</span><span>M</span></p>
+                <p class="card-t__p"><span>Segundos</span><span>S</span></p>
+                </div>
+            </div>
+            <p class="counter__text">El tiempo corre. Regístrate para ser el vehículo que dominará en Xandu. Cada segundo cuenta hacia la gran votación. <span>¡No te quedes fuera!</span></p>
+            <div class="counter__btn">
+                <a href="" class="btn btn-dark btn-dark--alt">Registrarse <img style="margin-left: 10px;" width="25" height="25" src="./assets/svg/arrow_alt_icon.svg" alt="icon arrow"></a>
             </div>
         </div>
-        <p class="counter__text">El tiempo corre. Regístrate para ser el vehículo que dominará en Xandu. Cada segundo cuenta hacia la gran votación. <span>¡No te quedes fuera!</span></p>
-        <div class="counter__btn">
-            <a href="" class="btn btn-dark btn-dark--alt">Registrarse <img style="margin-left: 10px;" width="25" height="25" src="./assets/svg/arrow_alt_icon.svg" alt="icon arrow"></a>
-        </div>
     </main>
-    <section class="bases">
+    <section class="bases" id="bases">
         <div class="contenedor">
             <h3 class="bases__title">Conoce nuestras bases</h3>
             <ol class="bases_list">
                 <li>Las inscripciones estarán abiertas del 1 de septiembre al 30 de octubre</li>
-                <li>Para poder participar deberas inscribirte en la pagina www.xandu.mx</li>
-                <li>Al registrarte tendras que pagar la cuota de $1,000 (mil pesos)</li>
+                <li>Para poder participar deberás inscribirte en la página www.xandu.mx</li>
+                <li>Al registrarte tendrás que pagar la cuota de $1,000 (mil pesos)</li>
                 <li>Podrán participar motocicletas, vehículos o cualquier automotor de cualquier parte del mundo </li>
                 <li>Las dimensiones máximas para participar son de 6 metros de largo por 3 metros de ancho y 3 metros de altura</li>
                 <li>Las dimensiones mínimas para participar son de 2 metros de largo por 1.20 metros de ancho y 1.20 centímetros de altura</li>
@@ -72,14 +74,12 @@
             </ol>
         </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer__container">
             <div class="footer__grid">
-                <div>
-                    <figure>
-                        <img width="100" height="55" src="./assets/svg/logo.svg" alt="logo">
-                    </figure>
-                </div>
+                <figure class="footer__logo">
+                    <img width="100" height="55" src="./assets/svg/logo.svg" alt="logo">
+                </figure>
                 <ul class="footer__ul">
                    <li>Apartados</li> 
                    <li>Inicio</li> 
@@ -89,7 +89,7 @@
                 </ul>
                 <ul class="footer__ul">
                     <li>Contáctanos</li>
-                    <li class="with-icon"><img width="24" height="24" src="./assets/svg/map-pin.svg" alt="map pin">Blas corral #360</li>
+                    <li class="with-icon"><img width="24" height="24" src="./assets/svg/map-pin.svg" alt="map pin">Blas Corral #360 Sur CP 34000 Durango, Dgo.</li>
                     <li class="with-icon"><img width="24" height="24" src="./assets/svg/mail.svg" alt="mail">correo@correo.com</li>
                     <li class="with-icon"><img width="24" height="24" src="./assets/svg/phone-call.svg" alt="phone-call">+52 618-000-00-00</li>
                 </ul>
