@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
 
 :root{
     /* Color base */
@@ -150,6 +151,11 @@ p{
     -webkit-backdrop-filter: blur(20px);
     background-image: linear-gradient(120deg, rgba(13,13,14,0.3), rgba(13,13,14,0.3));
 }
+.header__moon{
+    z-index: 2;
+    grid-area: 2 / 14 / 7 / 21;
+    animation: rise 10s ease-in-out infinite;
+}
 .header__car{
     grid-area: 1 / 8 / 11 / 15;
     align-self: end;
@@ -172,10 +178,11 @@ p{
     grid-area: 3 / 3 / 6 / 14;
 }
 .header__text{
-    font-size: var(--step-2);
-    line-height: 1.5;
+    font-size: var(--step-5);
+    line-height: 1.3;
     grid-area: 6 / 1 / 8 / 21;
-    color: var(--white);
+    color: var(--darken-200);
+    font-family: 'Jolly Lodger', sans-serif;
     text-align: center;
     & span{
         color: var(--beige-500);
@@ -194,6 +201,7 @@ p{
 .header__blob--three{
     animation-delay: -7s;
 }
+
 @keyframes fade {
     from{
         opacity: 0;
@@ -202,18 +210,32 @@ p{
         opacity: 1;
     }
 }
+@keyframes rise {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);  
+        opacity: 0.7;
+    }
+}
 @media (min-width: 768px){ 
     .header__logo{
         align-self: flex-start;
-        grid-area: 3 / 4 / 4 / 9;
+        grid-area: 3 / 2 / 6 / 9;
+        /* max-width: 230px; */
     }
     .header__blob{
-        /* grid-area: 3 / 11 / 12 / 20; */
-        grid-area: 3 / 11 / 12 / 20;
+        grid-area: 3 / 7 / 11 / 21;
     }
     .header__text{
-        grid-area: 6 / 4 / 8 / 13;
-        font-size: var(--step-1);
+        grid-area: 7 / 2 / 10 / 13;
+        font-size: var(--step-4);
         text-align: start;
     }
 }
@@ -235,7 +257,7 @@ p{
     transition: background-color var(--transition), color var(--transition), top var(--transition), box-shadow var(--transition);
 }
 .nav-bar :not([class]){
-    color: var(--darken-700);
+    color: var(--darken-200);
     text-decoration: none;
 }
 .nav-bar :not([class]):hover{
@@ -294,6 +316,9 @@ p{
 /* counter styles */
 .counter{
     padding-block: var(--spacing-section);
+    background-image: url('./assets/images/spiderWeb.png');
+    background-size: cover;
+    background-position: right;
 }
 .counter__title{
     color: var(--white);
@@ -354,6 +379,9 @@ p{
       width: var(--size-cube-desktop);
       height: var(--size-cube-desktop);
       font-size: var(--step-3);
+    }
+    .counter{
+        background-position: center;
     }
 }
 .card-t::after{
@@ -511,4 +539,17 @@ p{
     .footer__ul :is([class]){
         justify-content: flex-start;
     }
+}
+.ml4 {
+    position: relative;
+    font-weight: 900;
+    font-size: 4.5em;
+}
+.ml4 .letters {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0.3em;
+    right: 0;
+    opacity: 0; 
 }
