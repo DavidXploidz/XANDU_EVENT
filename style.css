@@ -7,6 +7,7 @@
     --darken-700: #1F1F1F;
     --darken-600: #333333;
     --darken-500: #131313;
+    --darken-300: #9A9CA4;
     --darken-200: #a1a1a1;
     /* Neutral */
     --white: #fafafa;
@@ -109,6 +110,10 @@ p{
 .btn-dark{
     background-color: var(--darken);
     color: var(--white);
+    &:hover{
+        background-color: var(--darken-700);
+        color: var(--beige-500);
+    }
 }
 .btn-dark--alt{
     background-color: var(--darken-700);
@@ -365,7 +370,7 @@ p{
     display: grid;
     align-items: center;
     justify-content: center;
-    color: #9A9CA4;
+    color: var(--darken-300);
     margin-bottom: 1rem;
     gap: 1rem;
     text-align: center;
@@ -407,6 +412,13 @@ p{
     align-items: center;
     column-gap: .5rem;
 }   
+.footer__ul :is(a){
+    color: var(--darken-300);
+    text-decoration: none;
+    &:hover{
+        color: var(--white);
+    }
+}
 .footer__redes{
     display: flex;
     align-items: center;
