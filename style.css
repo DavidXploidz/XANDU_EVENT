@@ -139,6 +139,11 @@ p{
     grid-template-rows: repeat(10, 10%);
     overflow: hidden;
 }
+.header__carrosa{
+    grid-area: 7 / 9 / 11 / 15;
+    z-index: 2;
+    align-self: end;
+}
 .header :is(.header__logo, .header__text, .header__car){
     z-index: 2;
 }
