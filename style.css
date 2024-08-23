@@ -444,16 +444,31 @@ p{
 .bases__title{
     color: var(--white);
     font-size: var(--step-2);
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 .bases_list{
     color: var(--darken-200);
     display: grid;
-    row-gap: 1rem;
-    padding-left: 1.4rem;
+    grid-template-columns: repeat(auto-fit,minmax(min(300px, 100%), 1fr));
+    gap: 3rem 1rem;
 }
 .bases_list li{
     line-height: 1.5;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    list-style: none;
+    position: relative;
+    &::after{
+        content: attr(data-label);
+        position: absolute;
+        top: -2rem;
+        color: var(--white);
+        height: 40px;
+        width: 40px;
+    }
 }
 .bases_list li::marker{
     color: var(--white);
