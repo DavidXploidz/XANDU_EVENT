@@ -140,9 +140,13 @@ p{
     overflow: hidden;
 }
 .header__carrosa{
-    grid-area: 7 / 9 / 11 / 15;
+    grid-area: 7 / 5 / 11 / 16;
     z-index: 2;
     align-self: end;
+    animation: 
+        rightEntrance 3s linear,
+        bounce 2s 3s linear infinite alternate-reverse
+    ;
 }
 .header :is(.header__logo, .header__text, .header__car){
     z-index: 2;
@@ -185,7 +189,7 @@ p{
 .header__text{
     font-size: var(--step-5);
     line-height: 1.3;
-    grid-area: 6 / 1 / 8 / 21;
+    grid-area: 5 / 1 / 8 / 21;
     color: var(--darken-200);
     font-family: 'Jolly Lodger', sans-serif;
     text-align: center;
@@ -206,29 +210,6 @@ p{
 .header__blob--three{
     animation-delay: -7s;
 }
-
-@keyframes fade {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-@keyframes rise {
-    0% {
-        transform: translateY(0px);
-        opacity: 0.7;
-    }
-    50% {
-        transform: translateY(-10px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0px);  
-        opacity: 0.7;
-    }
-}
 @media (min-width: 768px){ 
     .header__logo{
         align-self: flex-start;
@@ -242,6 +223,9 @@ p{
         grid-area: 7 / 2 / 10 / 13;
         font-size: var(--step-4);
         text-align: start;
+    }
+    .header__carrosa{
+        grid-area: 7 / 9 / 11 / 15;
     }
 }
 .nav-bar{
@@ -321,9 +305,10 @@ p{
 /* counter styles */
 .counter{
     padding-block: var(--spacing-section);
-    background-image: url('./assets/images/spiderWeb.png');
+    background-image: url('./assets/images/spiderWeb.webp');
     background-size: cover;
     background-position: right;
+    border-image: 1 fill linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
 }
 .counter__title{
     color: var(--white);
@@ -557,4 +542,48 @@ p{
     top: 0.3em;
     right: 0;
     opacity: 0; 
+}
+/* Animations */
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes rise {
+    0% {
+        transform: translateY(0px);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);  
+        opacity: 0.7;
+    }
+}
+@keyframes bounce {
+    0%, 40%, 80%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(-4deg);
+    }
+    60%, 100%{
+        transform: rotate(4deg);
+    }
+}
+@keyframes rightEntrance {
+    from{
+        transform: translateX(300px);
+        opacity: .2;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
